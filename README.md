@@ -24,6 +24,10 @@ git clone https://github.com/everest-engineering/JackPotUnitTesting.git
 ```
 npm install
 ```
+- To run the index.js
+```
+npm run run
+```
 - To run test files 
 ```
 npm run test
