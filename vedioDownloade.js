@@ -1,5 +1,4 @@
 const { appendFile } = require("fs");
-const { resolve } = require("path");
 const downloadFile = async (url, filename, startRange, endRange) => {
   const startTime = new Date();
   const response = await fetch(url, {
@@ -10,15 +9,14 @@ const downloadFile = async (url, filename, startRange, endRange) => {
   appendFile(filename, uint8Array, (err) => {
     if (err) {
       console.error("Error writing file:", err);
-    } else {
-      const endTime = new Date();
-      const timeTaken = endTime - startTime;
-      console.log(
-        `Time taken: ${timeTaken}ms,End time : ${endTime.getSeconds()},Start time :${startTime.getSeconds()}`
-      );
     }
   });
+  const endTime = new Date();
+  const timeTaken = endTime - startTime;
+  console.log(
+    `Time taken: ${timeTaken}ms,End time : ${endTime.getSeconds()},Start time :${startTime.getSeconds()}`
+  );
 };
 module.exports = {
-  downloadFile
+  downloadFile,
 };

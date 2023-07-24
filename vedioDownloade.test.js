@@ -1,5 +1,5 @@
 const { downloadFile } = require("./vedioDownloade");
-const downloadParallel=require("./parallelDownloade");
+const downloadParallel = require("./parallelDownloade");
 test("test for full vedio download", async () => {
   const fileUrl = "https://download.samplelib.com/mp4/sample-30s.mp4";
   const fileName = "sample-30s-3.mp4";
@@ -18,4 +18,3 @@ test("test for full vedio chunk wise download", async () => {
   const file = downloadParallel(fileUrl, fileName);
   expect(fetch.mock.calls.length).toEqual(2);
 });
-
